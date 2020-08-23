@@ -1,5 +1,5 @@
 <div  class = "mx-auto" style="width: 600px; margin-top:100px">
-    <h1>Sign In</h1>
+    <h1>Log In</h1>
     <form [formGroup] = "signIn" (ngSubmit) = "goHomePage()">
         <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -17,6 +17,8 @@
                 <p  class = "text-danger" [hidden] = "!signIn.get('password').hasError('maxlength')">Must not be less than 16 symbol</p>
         </div>
         <button type="submit" class="btn btn-primary" [disabled] = "signIn.invalid">Sign in</button>
+        <a class = "ml-2" (click) = "getNewPassword()">Forgot your Password?</a>
     </form>
-    <a class = "ml-2" (click) = "getNewPassword()">Forgot your Password?</a>
+    
+    <a class = "btn btn-success d-block mt-2" routerLink = "/register" >Create account</a>
 </div>

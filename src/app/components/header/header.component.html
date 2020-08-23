@@ -18,10 +18,12 @@
         [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" routerLink="/contact">Contact Us</a>
         </li>
-        <li class="nav-item" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <a class="mr-sm-2 btn btn-primary" routerLink="/login" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">Login</a>
+          <a class="mr-sm-2 btn btn-success" routerLink="/register" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">Register</a>
+      </form> 
     </div>
   </nav>
