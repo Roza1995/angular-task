@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   public signUp: FormGroup;
+  public usersData: Object;
+
   constructor(private router: Router, private formBuilder: FormBuilder) { 
 
     this.signUp = formBuilder.group({
@@ -40,7 +42,8 @@ export class RegisterComponent implements OnInit {
   }
 
   public goLogInPage(): void{
-    console.log(this.signUp.getRawValue());
+    this.usersData = this.signUp.getRawValue();
+    localStorage.setItem('usersData', JSON.stringify(this.usersData));
     this.router.navigate(['login']);
   }
 }

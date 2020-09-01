@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
 
   public signIn: FormGroup;
+  public userData: Object;
+
   constructor(private router: Router, private formBuilder: FormBuilder) { 
 
     this.signIn = formBuilder.group({
@@ -23,8 +25,9 @@ export class LogInComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public goHomePage(): void{
-    console.log(this.signIn.getRawValue());
+  public goHomePage(): any{
+    this.userData = this.signIn.getRawValue();
+    localStorage.setItem('userData', JSON.stringify(this.userData));
     this.router.navigate(['home']);
   }
 
