@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './components/root/app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeModule } from './pages/home/home.module';
+//import { HomeModule } from './pages/home/home.module';
 
 
 import { AboutComponent } from './pages/about/about.component';
@@ -40,7 +40,7 @@ import { RegisterComponent } from './pages/register/register.component';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    //HomeModule
   ],
   exports:[
    

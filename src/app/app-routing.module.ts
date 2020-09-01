@@ -1,26 +1,38 @@
+import { HomeGuard } from './core/guards/home.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule} from '@angular/router';
-
-
-import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { LogInComponent } from './pages/log-in/log-in.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { Routes, RouterModule } from '@angular/router';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
-  { path: 'about', component: AboutComponent},
-  { path: 'contact', component: ContactComponent},
-  { path: 'login', component: LogInComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'forgot-password', component: ForgotPasswordComponent},
-  { path: '**', component: NotFoundComponent},
+  { 
+    path: 'home', 
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+    canActivate: [HomeGuard],
+  },
+  {  
+    path: 'about', 
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule),
+  },
+  {  
+    path: 'contact', 
+    loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule)
+  },
+  {  
+    path: 'login', 
+    loadChildren: () => import('./pages/log-in/log-in.module').then(m => m.LogInModule),   
+  },
+  { 
+    path: 'register', 
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)},
+  {  
+    path: 'forgot-password', 
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule)
+  },
+  { 
+    path: '**', 
+    loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule)},
 ];
 
 @NgModule({
