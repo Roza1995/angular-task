@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
+
+import { AuthService } from './../../core/services';
 
 @Component({
   selector: 'app-log-in',
@@ -12,7 +15,8 @@ export class LogInComponent implements OnInit {
   public signIn: FormGroup;
   public userData: Object;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) { 
+  constructor(private router: Router, private formBuilder: FormBuilder,
+    private authService: AuthService,) { 
 
     this.signIn = formBuilder.group({
 
@@ -25,10 +29,20 @@ export class LogInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // convenience getter for easy access to form fields
+  get f() { return this.signIn.controls; }
+
   public goHomePage(): any{
-    this.userData = this.signIn.getRawValue();
-    localStorage.setItem('userData', JSON.stringify(this.userData));
-    this.router.navigate(['home']);
+    this.authService.login(this.f.email.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                  this.router.navigate(['home']);
+                });
+    /* this.userData = this.signIn.getRawValue();
+    localStorage.setItem('userData', JSON.stringify(this.userData)); */
+    
+    
   }
 
   public getNewPassword(): void{
