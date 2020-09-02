@@ -10,6 +10,8 @@ import { AppComponent } from './components/root/app.component';
 import { HeaderComponent } from './components/header/header.component';
 //import { HomeModule } from './pages/home/home.module';
 
+import { fakeBackendProvider } from './helpers';
+import {  AuthService, UserService } from './core/services';
 
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -45,7 +47,12 @@ import { RegisterComponent } from './pages/register/register.component';
   exports:[
    
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    UserService,
+      // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

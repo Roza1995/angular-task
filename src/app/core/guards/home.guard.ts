@@ -11,11 +11,11 @@ export class HomeGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (localStorage.getItem('userData')) {
+      if (localStorage.getItem('currentUser')) {
         return true;
     }else{
       alert('Please log in!')
-      this.router.navigate(['/login']);
+      this.router.navigate(['login']);
       return false;
     }
   }
