@@ -21,4 +21,22 @@
     </form>
     
     <a class = "btn btn-success d-block mt-2" routerLink = "/register" >Create account</a>
+    <div class = "container mt-2">
+        <button  class="btn btn-danger mx-2" (click)="authenticationService.GoogleAuth()">
+            Log in with Google
+        </button>
+        <button  class="btn btn-primary mx-2" (click)="authenticationService.FacebookAuth()">
+            Log in with Facebook
+        </button>
+        <button  class="btn btn-secondary mx-2" (click)="authenticationService.GitHubAuth()">
+            Log in with GitHub
+        </button>
+    </div>
+    
+    
 </div>
+    
+
+
+
+
