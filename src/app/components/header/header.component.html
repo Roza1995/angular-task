@@ -25,6 +25,9 @@
             [routerLinkActiveOptions]="{exact:true}">Login</a>
           <a class="mr-sm-2 btn btn-success" routerLink="/register" routerLinkActive="active"
             [routerLinkActiveOptions]="{exact:true}">Register</a>
+          <a class="nav-link" (click)="authenticationService.LogOut()">
+              <i class="fas fa-sign-out-alt"></i>Log out
+          </a>
       </form> 
     </div>
   </nav>

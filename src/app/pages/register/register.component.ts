@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
-import { first } from 'rxjs/operators';
+import { AuthenticationService } from './../../core/services/authentication.service';
 
-import { UserService } from './../../core/services';
 
 @Component({
   selector: 'app-register',
@@ -13,17 +11,16 @@ import { UserService } from './../../core/services';
 export class RegisterComponent implements OnInit {
 
   public signUp: FormGroup;
-  public usersData: Object;
   
 
-  constructor(private router: Router, private formBuilder: FormBuilder,
-    private userService: UserService) { 
+  constructor(private formBuilder: FormBuilder,
+    public authenticationService: AuthenticationService) { 
 
     this.signUp = formBuilder.group({
 
       email: ['', [Validators.required, Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}')]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]],           
-      confirmPassword: new FormControl('', [Validators.required]),
+      confirmPassword: ['', [Validators.required]],
     }, {
       validators: this.ConfirmedValidator('password', 'confirmPassword'),
     })
@@ -50,15 +47,8 @@ export class RegisterComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.signUp.controls; }
 
-  public goLogInPage(): any{
-    this.userService.register(this.signUp.value)
-            .pipe(first())
-            .subscribe(
-                data => {
-                  this.router.navigate(['login']);
-                });
-    /* this.usersData = this.signUp.getRawValue();
-    localStorage.setItem('usersData', JSON.stringify(this.usersData));
-     */
+  public goLogInPage(): void{
+    this.authenticationService.Register(this.f.email.value,this.f.password.value, );
+    
   }
 }
