@@ -1,6 +1,12 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+let baseUrl = 'http://localhost:8000/api';
+let serverUrl = 'http://localhost:8000';
+let apiVersion = 'v1';
+let apiUrls = {
+  v1: baseUrl+'/v1',
+}
 
 export const environment = {
   production: false,
@@ -13,8 +19,23 @@ export const environment = {
     messagingSenderId: "652489527223",
     appId: "1:652489527223:web:a81bf7f07686ee25a16232",
     measurementId: "G-825B9V9N1Y"
-  }
+  },
+  sandbox: true,
+  apiBaseUrl: baseUrl,
+  apiVersion: apiVersion,
+  apiUrl: baseUrl,
+  apiVersionUrl: apiUrls,
+  saveCredentials: true,
+  retryError500: {
+    enabled: true,
+    delay: 5, // in seconds
+    retries: 0,
+  },
+  serverUrl: serverUrl
 }
+
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

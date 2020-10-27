@@ -1,0 +1,15 @@
+<div class="site-section bg-light" id="contact-section">
+  <div id="myDiagramDiv"></div>
+</div>
+
+<ng-template #popupTemplate>
+  <div class="popup-wrapper">
+    <h3 mat-dialog-title>Info</h3>
+    <div mat-dialog-content>
+      <p>{{ popupText }}</p>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+    </div>
+  </div>
+</ng-template>

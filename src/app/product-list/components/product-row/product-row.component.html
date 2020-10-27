@@ -1,8 +1,22 @@
-  <div class="card ml-5">
-          <img [src] = "product.imgUrl" class="card-img-top" alt="..." style = "height:200px">
-          <div class="card-body">
-              <h5 class="card-title">{{product.title}}</h5>
-              <p class="card-text">{{product.description}}</p>
-              <h4>{{product.price | currency: 'USD'}}</h4>
-          </div>    
-  </div> 
+<div class="product-item">
+  <figure>
+    <img [src]="product.imgUrl" alt="Image" class="img-fluid">
+  </figure>
+  <div class="px-4">
+    <h3><a href="#">{{product.name}}</a></h3>
+    <h3><a href="#">{{product.type}}</a></h3>
+    <div class="mb-3">
+      <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+      <span class="meta-icons wishlist"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+    </div>
+    <p class="mb-4">{{product.description}}</p>
+    <div>
+       <span class="fa-stack fa-2x has-badge">
+          <i class="fa fa-shopping-cart fa-stack-2x red-cart" style = "cursor: pointer" (click)="setCart()" *ngIf="!productsOnCardID.includes(product.id)"></i>
+          <i class="fa fa-shopping-cart fa-stack-2x red-cart text-warning" style = "cursor: not-allowed" *ngIf="productsOnCardID.includes(product.id)"></i>
+       </span>
+      <a class="btn btn-black btn-outline-black ml-1 rounded-0" [routerLink]="['/item', product.id]">View</a>
+    </div>
+  </div>
+</div>
+

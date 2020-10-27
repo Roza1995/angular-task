@@ -1,0 +1,42 @@
+<div class="site-section bg-light">
+  <div class="card mb-3" style="width: auto;">
+    <div class="row no-gutters justify-content-center">
+      <!--<div class="col">-->
+        <!--<img [src]="product.imgUrl" class="card-img" alt="..." style = "height: auto;">-->
+      <!--</div>-->
+
+      <div class = "col">
+        <mat-carousel
+            timings="250ms ease-in"
+            [autoplay]="true"
+            interval="2000"
+            color="accent"
+            maxWidth="500px"
+            proportion="100"
+            slides="3"
+            [loop]="true"
+            [hideArrows]="false"
+            [hideIndicators]="false"
+            [useKeyboard]="true"
+            [useMouseWheel]="false"
+            orientation="ltr"
+        >
+          <mat-carousel-slide
+            *ngFor="let slide of product?.images; let i = index"
+            [image]="slide.src"
+            overlayColor="#00000040"
+            [hideOverlay]="false"
+          ></mat-carousel-slide>
+        </mat-carousel>
+      </div>
+
+      <div class="col">
+        <div class="card-body">
+          <h1 class="card-title">{{product?.name}}</h1>
+          <p class="card-text">{{product?.description}}</p>
+          <div class = "d-flex justify-content-md-start"><h4>{{product?.price | currency: 'EUR'}}</h4></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

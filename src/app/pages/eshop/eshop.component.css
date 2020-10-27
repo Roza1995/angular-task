@@ -1,0 +1,10 @@
+#myDiagramDiv {
+    background-color: white;
+    border: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    position: static;
+    z-index: 2;
+    width: 100%;
+    height: calc(100vh - 64px);
+    cursor: auto;
+}

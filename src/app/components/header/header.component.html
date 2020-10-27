@@ -1,34 +1,98 @@
-<header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" href="#">E-Shop</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item"  routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link" routerLink="/about">About</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link" routerLink="/contact">Contact Us</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-          <a class="mr-sm-2 btn btn-primary" routerLink="/login" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}">Login</a>
-          <a class="mr-sm-2 btn btn-success" routerLink="/register" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}">Register</a>
-          <a class="nav-link" (click)="authenticationService.LogOut()">
-              <i class="fas fa-sign-out-alt"></i>Log out
-          </a>
-      </form> 
+
+<div class="site-mobile-menu site-navbar-target">
+  <div class="site-mobile-menu-header">
+    <div class="site-mobile-menu-close mt-3">
+      <span class="icon-close2 js-menu-toggle"></span>
     </div>
-  </nav>
-</header> 
+  </div>
+  <div class="site-mobile-menu-body"></div>
+</div>
+
+<div class="top-bar py-3 bg-light" id="home-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-6 text-left">
+        <ul class="social-media">
+          <li><a (click)="authenticationService.FacebookAuth()"><span class="icon-facebook"></span></a></li>
+          <li><a (click)="authenticationService.GoogleAuth()"><span class="icon-google"></span></a></li>
+          <li><a (click)="authenticationService.GitHubAuth()"><span class="icon-github"></span></a></li>
+        </ul>
+      </div>
+
+      <div class="col-6">
+        <form class="form-inline float-right">
+          <a class="mr-2 btn " routerLink="/login" routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact:true}">Login</a>
+          <a class="mr-2 btn " routerLink="/register" routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact:true}">Register</a>
+          <a class="mr-2 btn" (click)="authenticationService.LogOut()">Log out</a>
+        </form>
+        <p class="mb-0">
+          <span class="mr-3"><a href="tel://#"> <span class="icon-phone mr-2" style="position: relative; top: 2px;"></span><span class="d-none d-lg-inline-block text-black">(+1) 234 5678 9101</span></a></span>
+          <span><a href="#"><span class="icon-envelope mr-2" style="position: relative; top: 2px;"></span><span class="d-none d-lg-inline-block text-black">shop@yourdomain.com</span></a></span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+
+
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-6 col-xl-2">
+        <h1 class="mb-0 site-logo"><a routerLink="/e-shop" class="text-black mb-0">E-Shop<span class="text-primary">.</span> </a></h1>
+      </div>
+      <div class="col-12 col-md-10 d-none d-xl-block">
+        <nav class="site-navigation position-relative text-right" role="navigation">
+
+          <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+
+            <li class="nav-link"  routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/home">Home</a>
+            </li>
+
+            <li class="nav-link" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/products">Products</a>
+            </li>
+
+            <li class="nav-link" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/about">About Us</a>
+            </li>
+
+            <li class="nav-link" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/special">Special</a>
+            </li>
+
+            <li class="nav-link" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/testimonials">Testimonials</a>
+            </li>
+
+
+            <li><a href="#blog-section" class="nav-link">Blog</a></li>
+
+            <li class="nav-link" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+      <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+
+    </div>
+  </div>
+
+</header>

@@ -5,14 +5,14 @@
            "title": "Red Nike",
            "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
            "price": 410,
-           "imgUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+           "imgUrl": "assets/images/model_1_bg.jpg"
        },
        {
            "id":2,
            "title": "Grey Nike",
            "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
            "price": 200,
-           "imgUrl": "https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+           "imgUrl": "assets/images/model_2_bg.jpg"
      
        },
        {
@@ -20,15 +20,51 @@
            "title":  "Puma",
            "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
            "price": 300,
-           "imgUrl": "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+           "imgUrl": "assets/images/model_3_bg.jpg"
        },
        {
-        "id":4,
-        "title":  "Red",
-        "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
-        "price": 200,
-        "imgUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-    }
+          "id":4,
+          "title":  "Red",
+          "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
+          "price": 200,
+          "imgUrl": "assets/images/model_4_bg.jpg"
+        },
+      {
+          "id":5,
+          "title":  "Red",
+          "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
+          "price": 200,
+          "imgUrl": "assets/images/model_5_bg.jpg"
+      },
+      {
+          "id":6,
+          "title":  "Red",
+          "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
+          "price": 200,
+          "imgUrl": "assets/images/model_1_bg.jpg"
+      }
 
-   ]
+   ],
+
+  "testimonials": [
+    {
+      "id":4,
+      "title":  "John Smith",
+      "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
+      "imgUrl": "assets/images/person_3.jpg"
+    },
+    {
+      "id":5,
+      "title":  "Roger Spears",
+      "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
+      "imgUrl": "assets/images/person_2.jpg"
+    },
+    {
+      "id":6,
+      "title":  "Kyle McDonald",
+      "description": "Lightweight construction with breathable mesh fabric for maximum comfort and performance.Lace-up closure for a snug fit.High quality EVA sole for traction and exceptional durability.",
+      "imgUrl": "assets/images/person_4.jpg"
+    }
+  ]
+
 }

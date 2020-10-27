@@ -1,0 +1,27 @@
+<div class="site-section testimonial-wrap" id="testimonials-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h3 class="section-sub-title">People Says</h3>
+        <h2 class="section-title mb-3">Testimonials</h2>
+      </div>
+    </div>
+  </div>
+  <div class="slide-one-item home-slider owl-carousel">
+
+    <div *ngFor = "let item of testimonials">
+      <div class = "testimonial">
+        <figure class="mb-4 d-block align-items-center justify-content-center">
+          <div><img [src] = "item.imgUrl"  alt="Image" class="w-100 img-fluid mb-3"></div>
+        </figure>
+        <blockquote class="mb-3">
+          <p>{{item.description}}</p>
+        </blockquote>
+        <p class="text-black"><strong>{{item.title}}</strong></p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+

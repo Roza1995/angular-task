@@ -2,6 +2,8 @@ import { AuthenticationService } from './../../core/services/authentication.serv
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { faFacebook, faGoogle, faGithub} from '@fortawesome/free-brands-svg-icons';
+
 
 
 @Component({
@@ -12,9 +14,14 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
 
   public signIn: FormGroup;
+  faFacebook = faFacebook;
+  faGoogle = faGoogle;
+  faGithub = faGithub;
+
+
 
   constructor(private router: Router, private formBuilder: FormBuilder,
-    public authenticationService: AuthenticationService) { 
+    public authenticationService: AuthenticationService) {
 
     this.signIn = formBuilder.group({
 

@@ -49,7 +49,7 @@ export class AuthenticationService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
     .then((result) => {
       this.ngZone.run(() => {
-        this.router.navigate(['home']);
+        this.router.navigate(['products']);
       });
       
     }).catch((error)=>{
@@ -80,7 +80,7 @@ export class AuthenticationService {
     return this.afAuth.signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['home']);
+          this.router.navigate(['products']);
         })
         
       }).catch((error)=>{

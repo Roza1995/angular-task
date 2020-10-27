@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { AuthenticationService } from './../../core/services/authentication.service';
+import {DataService} from '../../core/services';
 
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [DataService]
 })
 export class RegisterComponent implements OnInit {
 
@@ -14,7 +16,7 @@ export class RegisterComponent implements OnInit {
   
 
   constructor(private formBuilder: FormBuilder,
-    public authenticationService: AuthenticationService) { 
+    public authenticationService: AuthenticationService, private dataservice: DataService) {
 
     this.signUp = formBuilder.group({
 
@@ -42,6 +44,13 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.register();
+  }
+
+
+  public register(): void {
+    this.dataservice.register(this.signUp)
+      .subscribe(data => this.signUp = data);
   }
 
   // convenience getter for easy access to form fields

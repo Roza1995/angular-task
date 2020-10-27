@@ -1,10 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from './core/services/authentication.service';
+
+
+
+import { MAT_LABEL_GLOBAL_OPTIONS, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -23,6 +36,14 @@ import { LogInComponent } from './pages/log-in/log-in.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { EshopComponent } from './pages/eshop/eshop.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ItemComponent } from './pages/item/item.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SpecialComponent } from './pages/special/special.component';
+import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
+import { BucketComponent } from './pages/bucket/bucket.component';
+
 
 
 
@@ -36,10 +57,20 @@ import { RegisterComponent } from './pages/register/register.component';
     LogInComponent,
     ForgotPasswordComponent,
     NotFoundComponent,
-    RegisterComponent
-    
+    RegisterComponent,
+    EshopComponent,
+    ItemComponent,
+    FooterComponent,
+    SpecialComponent,
+    TestimonialsComponent,
+    BucketComponent,
   ],
   imports: [
+    NgbModule,
+    FontAwesomeModule,
+    MatDialogModule,
+    MatCarouselModule.forRoot(),
+    MatPaginatorModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -49,7 +80,7 @@ import { RegisterComponent } from './pages/register/register.component';
     AngularFireModule.initializeApp(environment.firebaseConfig, 'my-app'),
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
-    AngularFireStorageModule // Only required for storage features
+    AngularFireStorageModule, NoopAnimationsModule // Only required for storage features
 
   ],
   exports:[

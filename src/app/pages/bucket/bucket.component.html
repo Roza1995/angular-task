@@ -1,0 +1,30 @@
+<div class="site-section bg-light">
+
+    <div class="row no-gutters justify-content-center">
+
+      <ng-container *ngFor="let c of carts">
+        <div class="col-lg-4 col-md-6 mb-5">
+          <div class="product-item">
+            <figure>
+              <img [src]="c[0].imgUrl" alt="Image" class="img-fluid">
+            </figure>
+            <div class="px-4">
+              <h3><a href="#">{{c[0].name}}</a></h3>
+              <h3><a href="#">{{c[0].type}}</a></h3>
+              <h5 class="text-warning font-weight-bold">{{c[0].price | currency: 'EUR'}}</h5>
+              <div class="mb-3">
+                <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                <span class="meta-icons wishlist"><a href="#" class="mr-2"><span
+                    class="icon-heart"></span></a> 29</span>
+              </div>
+              <p class="mb-4">{{c[0].description}}</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+
+
+</div>
+

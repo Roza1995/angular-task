@@ -1,0 +1,33 @@
+.mat-toolbar {
+    font-size: 12px;
+    color: rgba(0,0,0,.54);
+}
+button {
+    border: none !important;
+    background-color: transparent;
+}
+
+
+.fa-stack[data-count]:after{
+    position:absolute;
+    right:0%;
+    top:0%;
+    content: attr(data-count);
+    font-size:40%;
+    padding:.3em;
+    border-radius:999px;
+    line-height:.75em;
+    color: #f16821;
+    text-align:center;
+    min-width:2em;
+    font-weight:bold;
+    background: white;
+    border-style:solid;
+}
+.fa-circle {
+    color: #f16821;
+}
+
+.red-cart {
+    color: #f16821; background:white;
+}
